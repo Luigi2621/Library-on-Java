@@ -10,6 +10,9 @@ import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatLightOwlIJTheme;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
 import java.awt.Color;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 import javax.swing.UIManager;
 
 /**
@@ -25,6 +28,7 @@ public class Dashboard extends javax.swing.JFrame {
         //setLayout(new BorderLayout());
         initComponents();
         InitStyles();
+        SetDate();
     }
     
     private void InitStyles(){
@@ -37,6 +41,12 @@ public class Dashboard extends javax.swing.JFrame {
         appName.putClientProperty( "FlatLaf.style", "font: bold $h3.regular.font" );
         appName.setForeground(Color.white);
         
+    }
+    
+        private void SetDate() {
+        LocalDate now = LocalDate.now();
+        Locale spanishLocale = new Locale("es", "ES");
+        dateText.setText(now.format(DateTimeFormatter.ofPattern("'Hoy es' EEEE dd 'de' MMMM 'de' yyyy", spanishLocale)));
     }
     //mensaje.putClientProperty( "FlatLaf.style", "font: 200% $light.font" );
 
