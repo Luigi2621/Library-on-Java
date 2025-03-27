@@ -3,22 +3,42 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.library;
+//import java.awt.BorderLayout; // o GridLayout, FlowLayout, etc.
+// ...
 
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatLightOwlIJTheme;
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
+import java.awt.Color;
+import javax.swing.UIManager;
 
 /**
  *
  * @author luisc
  */
-public class dashboard extends javax.swing.JFrame {
+public class Dashboard extends javax.swing.JFrame {
 
     /**
      * Creates new form dashboard
      */
-    public dashboard() {
+    public Dashboard() {
+        //setLayout(new BorderLayout());
         initComponents();
+        InitStyles();
     }
+    
+    private void InitStyles(){
+        mensaje.putClientProperty( "FlatLaf.style", "font: 14 $light.font" );
+        mensaje.setForeground(Color.black);
+        navText.putClientProperty( "FlatLaf.style", "font: bold $h3.regular.font" );
+        navText.setForeground(Color.white);
+        dateText.putClientProperty( "FlatLaf.style", "font: 24 $light.font" );
+        dateText.setForeground(Color.white);
+        appName.putClientProperty( "FlatLaf.style", "font: bold $h3.regular.font" );
+        appName.setForeground(Color.white);
+        
+    }
+    //mensaje.putClientProperty( "FlatLaf.style", "font: 200% $light.font" );
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,48 +50,196 @@ public class dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         background = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jTextField1 = new javax.swing.JTextField();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        menu = new javax.swing.JPanel();
+        appName = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        botonPrincipal = new javax.swing.JButton();
+        botonPrestamos = new javax.swing.JButton();
+        botonDevoluciones = new javax.swing.JButton();
+        botonUsuarios = new javax.swing.JButton();
+        botonLibros = new javax.swing.JButton();
+        botonReportes = new javax.swing.JButton();
+        header = new javax.swing.JPanel();
+        navText = new javax.swing.JLabel();
+        dateText = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        mensaje = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         background.setBackground(new java.awt.Color(255, 255, 255));
 
-        jToggleButton1.setText("jToggleButton1");
+        menu.setBackground(new java.awt.Color(255, 153, 51));
+        menu.setPreferredSize(new java.awt.Dimension(270, 640));
 
-        jTextField1.setText("jTextField1");
+        appName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        appName.setText("ibooks");
 
-        jToggleButton2.setText("jToggleButton2");
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+
+        botonPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home-outline.png"))); // NOI18N
+        botonPrincipal.setText("Principal");
+        botonPrincipal.setBorder(null);
+        botonPrincipal.setBorderPainted(false);
+        botonPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        botonPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPrincipalActionPerformed(evt);
+            }
+        });
+
+        botonPrestamos.setText("Préstamos");
+        botonPrestamos.setBorder(null);
+        botonPrestamos.setBorderPainted(false);
+        botonPrestamos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonPrestamos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPrestamosActionPerformed(evt);
+            }
+        });
+
+        botonDevoluciones.setText("Devoluciones");
+        botonDevoluciones.setBorder(null);
+        botonDevoluciones.setBorderPainted(false);
+        botonDevoluciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        botonUsuarios.setText("Usuarios");
+        botonUsuarios.setBorder(null);
+        botonUsuarios.setBorderPainted(false);
+        botonUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonUsuariosActionPerformed(evt);
+            }
+        });
+
+        botonLibros.setText("Libros");
+        botonLibros.setBorder(null);
+        botonLibros.setBorderPainted(false);
+        botonLibros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        botonReportes.setText("Reportes");
+        botonReportes.setBorder(null);
+        botonReportes.setBorderPainted(false);
+        botonReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
+        menu.setLayout(menuLayout);
+        menuLayout.setHorizontalGroup(
+            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(appName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(menuLayout.createSequentialGroup()
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addComponent(botonPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(botonPrestamos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(botonDevoluciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(botonUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(botonLibros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(botonReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        menuLayout.setVerticalGroup(
+            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(appName, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(botonPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botonPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonDevoluciones, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
+
+        header.setBackground(new java.awt.Color(255, 153, 102));
+        header.setPreferredSize(new java.awt.Dimension(744, 150));
+
+        navText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        navText.setText("Administración/Control/Biblioteca");
+
+        dateText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dateText.setText("Hoy es {dayname} de {month} de {year}");
+
+        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
+        header.setLayout(headerLayout);
+        headerLayout.setHorizontalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerLayout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(navText, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(headerLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        headerLayout.setVerticalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(navText, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 693, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        mensaje.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mensaje.setText("We love reading at the library!!!!!!");
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 325, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(345, 345, 345))
+                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(327, 327, 327)
+                .addComponent(mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(320, 320, 320)
+                .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(58, 58, 58)
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(387, Short.MAX_VALUE))
+                .addGap(216, 216, 216)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -89,45 +257,49 @@ public class dashboard extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPrincipalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonPrincipalActionPerformed
+
+    private void botonPrestamosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPrestamosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonPrestamosActionPerformed
+
+    private void botonUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonUsuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonUsuariosActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        FlatLightOwlIJTheme.setup();//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
+        FlatMaterialLighterIJTheme.setup();
+        UIManager.put( "Button.arc", 999 ); //Quizá borrar este más tarde
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new dashboard().setVisible(true);
+                new Dashboard().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel appName;
     private javax.swing.JPanel background;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JButton botonDevoluciones;
+    private javax.swing.JButton botonLibros;
+    private javax.swing.JButton botonPrestamos;
+    private javax.swing.JButton botonPrincipal;
+    private javax.swing.JButton botonReportes;
+    private javax.swing.JButton botonUsuarios;
+    private javax.swing.JLabel dateText;
+    private javax.swing.JPanel header;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel mensaje;
+    private javax.swing.JPanel menu;
+    private javax.swing.JLabel navText;
     // End of variables declaration//GEN-END:variables
 }
