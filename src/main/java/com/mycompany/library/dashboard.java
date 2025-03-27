@@ -77,52 +77,68 @@ public class Dashboard extends javax.swing.JFrame {
 
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
 
-        botonPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home-outline.png"))); // NOI18N
+        botonPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home-outline(1).png"))); // NOI18N
         botonPrincipal.setText("Principal");
-        botonPrincipal.setBorder(null);
+        botonPrincipal.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         botonPrincipal.setBorderPainted(false);
         botonPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        botonPrincipal.setIconTextGap(10);
         botonPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonPrincipalActionPerformed(evt);
             }
         });
 
+        botonPrestamos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prestamo-libros(1).png"))); // NOI18N
         botonPrestamos.setText("Préstamos");
-        botonPrestamos.setBorder(null);
+        botonPrestamos.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         botonPrestamos.setBorderPainted(false);
         botonPrestamos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonPrestamos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        botonPrestamos.setIconTextGap(10);
         botonPrestamos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonPrestamosActionPerformed(evt);
             }
         });
 
+        botonDevoluciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calendar-check(1).png"))); // NOI18N
         botonDevoluciones.setText("Devoluciones");
-        botonDevoluciones.setBorder(null);
+        botonDevoluciones.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         botonDevoluciones.setBorderPainted(false);
         botonDevoluciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonDevoluciones.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        botonDevoluciones.setIconTextGap(10);
 
+        botonUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/account-multiple(1).png"))); // NOI18N
         botonUsuarios.setText("Usuarios");
-        botonUsuarios.setBorder(null);
+        botonUsuarios.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         botonUsuarios.setBorderPainted(false);
         botonUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        botonUsuarios.setIconTextGap(10);
         botonUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonUsuariosActionPerformed(evt);
             }
         });
 
+        botonLibros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/libro-abierto-variante(1).png"))); // NOI18N
         botonLibros.setText("Libros");
-        botonLibros.setBorder(null);
+        botonLibros.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         botonLibros.setBorderPainted(false);
         botonLibros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonLibros.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        botonLibros.setIconTextGap(10);
 
+        botonReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/file-chart(1).png"))); // NOI18N
         botonReportes.setText("Reportes");
-        botonReportes.setBorder(null);
+        botonReportes.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         botonReportes.setBorderPainted(false);
         botonReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonReportes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        botonReportes.setIconTextGap(10);
 
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
@@ -134,7 +150,7 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(appName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(menuLayout.createSequentialGroup()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 11, Short.MAX_VALUE)))
                 .addContainerGap())
             .addComponent(botonPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(botonPrestamos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
