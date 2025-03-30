@@ -20,8 +20,11 @@ public class Lendings extends javax.swing.JPanel {
         InitStyles();
     }
 private void InitStyles(){
-
-     
+    folioLbl.putClientProperty( "FlatLaf.styleClass", "large" );
+        folioLbl.setForeground(Color.black);
+        libroIdLbl.putClientProperty( "FlatLaf.styleClass", "large" );
+        libroIdLbl.setForeground(Color.black);
+       
         
         
     }
@@ -36,52 +39,134 @@ private void InitStyles(){
 
         bg = new javax.swing.JPanel();
         image = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        folioLbl = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        libroIdLbl = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        folioTxt = new javax.swing.JTextField();
+        libroIdTxt = new javax.swing.JTextField();
+        button = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 153, 102));
+        setBackground(new java.awt.Color(255, 255, 255));
+        setForeground(new java.awt.Color(204, 204, 204));
         setPreferredSize(new java.awt.Dimension(750, 430));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
-        image.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stack-of-books(1).png"))); // NOI18N
-        image.setPreferredSize(new java.awt.Dimension(238, 264));
+        image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prestamo-libro (1).png"))); // NOI18N
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(345, 345, 345)
-                .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
-                .addGap(99, 99, 99))
+            .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(image, javax.swing.GroupLayout.PREFERRED_SIZE, 210, Short.MAX_VALUE)
-                .addGap(21, 21, 21))
+                .addComponent(image, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        folioLbl.setText("Folio Usuario");
+
+        libroIdLbl.setText("Libro ID");
+
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        folioTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                folioTxtActionPerformed(evt);
+            }
+        });
+
+        button.setBackground(new java.awt.Color(0, 102, 204));
+        button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        button.setForeground(new java.awt.Color(255, 255, 255));
+        button.setText("Prestar");
+        button.setBorderPainted(false);
+        button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(libroIdLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(folioLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(libroIdTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(folioTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(27, 27, 27)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(button, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                        .addGap(49, 49, 49))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(folioLbl)
+                        .addGap(18, 18, 18)
+                        .addComponent(folioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(libroIdLbl)
+                        .addGap(24, 24, 24)
+                        .addComponent(libroIdTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(button, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void folioTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folioTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_folioTxtActionPerformed
+
+    private void buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
+    private javax.swing.JButton button;
+    private javax.swing.JLabel folioLbl;
+    private javax.swing.JTextField folioTxt;
     private javax.swing.JLabel image;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JLabel libroIdLbl;
+    private javax.swing.JTextField libroIdTxt;
     // End of variables declaration//GEN-END:variables
 }

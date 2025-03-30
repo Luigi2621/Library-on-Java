@@ -4,7 +4,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1020, 657]"/>
+      <Dimension value="[1050, 660]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -52,15 +52,9 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="37" pref="37" max="-2" attributes="0"/>
                           <Component id="mensaje" min="-2" pref="460" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="233" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="content" alignment="0" max="32767" attributes="0"/>
-                              <Component id="header" pref="724" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="header" pref="730" max="32767" attributes="0"/>
+                      <Component id="content" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -69,17 +63,12 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="menu" min="-2" pref="657" max="-2" attributes="0"/>
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                   <Component id="mensaje" min="-2" pref="45" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="header" min="-2" pref="110" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                          <Component id="content" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                  <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                  <Component id="header" min="-2" pref="110" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <Component id="content" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -98,22 +87,18 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="appName" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="botonPrincipal" alignment="0" max="32767" attributes="0"/>
+                  <Component id="botonPrestamos" alignment="0" max="32767" attributes="0"/>
+                  <Component id="botonDevoluciones" alignment="0" max="32767" attributes="0"/>
+                  <Component id="botonLibros" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="appName" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="botonReportes" min="-2" pref="289" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="botonReportes" max="32767" attributes="0"/>
-                          <Component id="botonLibros" alignment="0" max="32767" attributes="0"/>
-                          <Component id="botonUsuarios" alignment="0" max="32767" attributes="0"/>
-                          <Component id="botonDevoluciones" alignment="0" pref="289" max="32767" attributes="0"/>
-                          <Component id="botonPrestamos" alignment="0" max="32767" attributes="0"/>
-                          <Component id="botonPrincipal" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="botonUsuarios" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -123,33 +108,19 @@
                       <Component id="appName" min="-2" pref="65" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" pref="12" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="botonPrincipal" min="-2" pref="54" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                              <Component id="botonPrestamos" min="-2" pref="57" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
-                              <Component id="botonDevoluciones" min="-2" pref="54" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
-                              <Component id="botonUsuarios" min="-2" pref="57" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
-                              <Component id="botonLibros" min="-2" pref="62" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="288" max="-2" attributes="0"/>
-                              <Component id="botonReportes" min="-2" pref="61" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="185" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="botonPrincipal" min="-2" pref="54" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="botonPrestamos" min="-2" pref="57" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="botonDevoluciones" min="-2" pref="54" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="botonUsuarios" min="-2" pref="57" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="botonLibros" min="-2" pref="62" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
+                      <Component id="botonReportes" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -314,7 +285,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-                              <Component id="dateText" max="32767" attributes="0"/>
+                              <Component id="dateText" pref="418" max="32767" attributes="0"/>
                               <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
                           </Group>
                       </Group>
