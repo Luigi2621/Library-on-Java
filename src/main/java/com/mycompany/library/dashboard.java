@@ -12,6 +12,7 @@ import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighte
 import com.mycompany.views.Books;
 import com.mycompany.views.Lendings;
 import com.mycompany.views.Principal;
+import com.mycompany.views.Reports;
 import com.mycompany.views.Returns;
 import com.mycompany.views.Users;
 import com.mycompany.views.upBooks;
@@ -186,6 +187,11 @@ public class Dashboard extends javax.swing.JFrame {
         botonReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonReportes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         botonReportes.setIconTextGap(10);
+        botonReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonReportesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
@@ -338,6 +344,11 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         ShowJPanel(new Books());
     }//GEN-LAST:event_botonLibrosActionPerformed
+
+    private void botonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonReportesActionPerformed
+        // TODO add your handling code here:
+        ShowJPanel(new Reports());
+    }//GEN-LAST:event_botonReportesActionPerformed
 
     /**
      * @param args the command line arguments
