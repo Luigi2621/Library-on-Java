@@ -50,7 +50,6 @@ public class Returns extends javax.swing.JPanel {
         Text2.setText("Libro ID");
 
         folioLbl.setForeground(new java.awt.Color(102, 102, 102));
-        folioLbl.setText("Ingrese el folio del usuario");
         folioLbl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 folioLblActionPerformed(evt);
@@ -58,7 +57,6 @@ public class Returns extends javax.swing.JPanel {
         });
 
         libroIdTxt.setForeground(new java.awt.Color(102, 102, 102));
-        libroIdTxt.setText("Ingrese el ID del libro a devolver");
         libroIdTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 libroIdTxtActionPerformed(evt);
