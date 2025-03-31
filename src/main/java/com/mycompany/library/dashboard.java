@@ -146,6 +146,11 @@ public class Dashboard extends javax.swing.JFrame {
         botonDevoluciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonDevoluciones.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         botonDevoluciones.setIconTextGap(10);
+        botonDevoluciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonDevolucionesActionPerformed(evt);
+            }
+        });
 
         botonUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/account-multiple(1).png"))); // NOI18N
         botonUsuarios.setText("Usuarios");
@@ -316,6 +321,11 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         ShowJPanel(new Users());
     }//GEN-LAST:event_botonUsuariosActionPerformed
+
+    private void botonDevolucionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDevolucionesActionPerformed
+        // TODO add your handling code here:
+        ShowJPanel(new Returns());
+    }//GEN-LAST:event_botonDevolucionesActionPerformed
 
     /**
      * @param args the command line arguments
