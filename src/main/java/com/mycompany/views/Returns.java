@@ -42,7 +42,7 @@ public class Returns extends javax.swing.JPanel {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        title.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         title.setText("Devolución de Libro");
 
         Text1.setText("Folio Usuario");
@@ -69,6 +69,7 @@ public class Returns extends javax.swing.JPanel {
         button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         button.setForeground(new java.awt.Color(255, 255, 255));
         button.setText("Devolver");
+        button.setBorder(null);
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
