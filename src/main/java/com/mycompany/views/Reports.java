@@ -8,12 +8,12 @@ package com.mycompany.views;
  *
  * @author luisc
  */
-public class Books extends javax.swing.JPanel {
+public class Reports extends javax.swing.JPanel {
 
     /**
      * Creates new form Users
      */
-    public Books() {
+    public Reports() {
         initComponents();
     }
 
@@ -37,7 +37,7 @@ public class Books extends javax.swing.JPanel {
         jButton4 = new javax.swing.JButton();
 
         title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        title.setText("Libros");
+        title.setText("Usuarios");
 
         jButton1.setBackground(new java.awt.Color(0, 102, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -50,7 +50,7 @@ public class Books extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Título", "Fecha de Publicación", "Autor", "Categoría", "Edición", "Idioma", "Páginas", "Descripción", "Ejemplares", "Stock", "Disponibles"
+                "ID", "Nombre", "1er Apellido", "2do Apellido", "Domicilo", "Teléfono"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
