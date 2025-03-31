@@ -39,7 +39,7 @@
     <Container class="javax.swing.JPanel" name="background">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="66" red="33" type="rgb"/>
+          <Color blue="ff" green="0" red="0" type="rgb"/>
         </Property>
       </Properties>
 
@@ -96,14 +96,10 @@
                   <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
                   <Component id="botonPrincipal" alignment="0" max="32767" attributes="0"/>
                   <Component id="botonPrestamos" alignment="0" max="32767" attributes="0"/>
-                  <Component id="botonDevoluciones" alignment="0" max="32767" attributes="0"/>
+                  <Component id="botonDevoluciones" alignment="0" pref="290" max="32767" attributes="0"/>
                   <Component id="botonLibros" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="botonReportes" min="-2" pref="289" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
                   <Component id="botonUsuarios" alignment="0" max="32767" attributes="0"/>
+                  <Component id="botonReportes" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -123,9 +119,9 @@
                       <Component id="botonUsuarios" min="-2" pref="57" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="botonLibros" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
-                      <Component id="botonReportes" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="botonReportes" min="-2" pref="62" max="-2" attributes="0"/>
+                      <EmptySpace pref="140" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
