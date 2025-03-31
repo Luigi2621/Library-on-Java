@@ -11,6 +11,7 @@ import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatLightOwlIJThem
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
 import com.mycompany.views.Lendings;
 import com.mycompany.views.Principal;
+import com.mycompany.views.Returns;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.time.LocalDate;
@@ -55,7 +56,7 @@ public class Dashboard extends javax.swing.JFrame {
     }
     //mensaje.putClientProperty( "FlatLaf.style", "font: 200% $light.font" );
     private void InitContent() {
-        ShowJPanel(new Lendings());
+        ShowJPanel(new Returns());
 
     }
     
