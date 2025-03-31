@@ -86,6 +86,7 @@ private void InitStyles(){
         button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         button.setForeground(new java.awt.Color(255, 255, 255));
         button.setText("Prestar");
+        button.setBorder(null);
         button.setBorderPainted(false);
         button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         button.addActionListener(new java.awt.event.ActionListener() {

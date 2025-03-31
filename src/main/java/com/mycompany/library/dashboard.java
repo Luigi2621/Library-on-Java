@@ -12,6 +12,7 @@ import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighte
 import com.mycompany.views.Lendings;
 import com.mycompany.views.Principal;
 import com.mycompany.views.Returns;
+import com.mycompany.views.upBooks;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.time.LocalDate;
@@ -56,13 +57,13 @@ public class Dashboard extends javax.swing.JFrame {
     }
     //mensaje.putClientProperty( "FlatLaf.style", "font: 200% $light.font" );
     private void InitContent() {
-        ShowJPanel(new Returns());
+        ShowJPanel(new Lendings());
 
     }
     
     private void ShowJPanel(JPanel p){
         
-        p.setSize(750,430);
+        p.setSize(787,439);
         p.setLocation(0,0);
         
         content.removeAll();
@@ -99,11 +100,13 @@ public class Dashboard extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1050, 660));
 
-        background.setBackground(new java.awt.Color(255, 153, 51));
+        background.setBackground(new java.awt.Color(51, 102, 255));
 
-        menu.setBackground(new java.awt.Color(255, 153, 51));
+        menu.setBackground(new java.awt.Color(102, 0, 255));
         menu.setPreferredSize(new java.awt.Dimension(270, 640));
 
+        appName.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        appName.setForeground(new java.awt.Color(255, 255, 255));
         appName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         appName.setText("ibooks");
 
@@ -210,7 +213,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        header.setBackground(new java.awt.Color(255, 153, 102));
+        header.setBackground(new java.awt.Color(102, 102, 255));
         header.setPreferredSize(new java.awt.Dimension(744, 150));
 
         navText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -224,27 +227,25 @@ public class Dashboard extends javax.swing.JFrame {
         headerLayout.setHorizontalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
-                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(headerLayout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(navText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(headerLayout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(dateText, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
-                        .addGap(16, 16, 16)))
+                .addGap(93, 93, 93)
+                .addComponent(navText, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
                 .addGap(187, 187, 187))
+            .addGroup(headerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dateText, javax.swing.GroupLayout.DEFAULT_SIZE, 662, Short.MAX_VALUE)
+                .addGap(62, 62, 62))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(navText, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addComponent(navText)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        content.setBackground(new java.awt.Color(255, 153, 51));
+        content.setBackground(new java.awt.Color(102, 204, 255));
 
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
@@ -254,7 +255,7 @@ public class Dashboard extends javax.swing.JFrame {
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 522, Short.MAX_VALUE)
         );
 
         mensaje.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -269,20 +270,23 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(backgroundLayout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addComponent(mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(mensaje, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+                        .addGap(233, 233, 233))
                     .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
                     .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addComponent(mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)
+                        .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
