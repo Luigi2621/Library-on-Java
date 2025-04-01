@@ -15,10 +15,10 @@ public class DAOUsersImpl extends Database implements DAOUsers {
         try {
             this.Conectar();
             PreparedStatement st = this.conexion.prepareStatement("INSERT INTO users (id, name, last_name_p, last_name_m, domicilio, tel, sanctions, sanc money) VALUES(?,?,?,?,?,?,?,?);");
-            st.setString(1, user.getId());
+            st.setInt(1, user.getId());
             st.setString(2, user.getName());
-            st.setString(3, user.getLast_name_p());
-            st.setString(4, user.getLast_name_m());
+            st.setString(3, user.getLast_name_1());
+            st.setString(4, user.getLast_name_2());
             st.setString(5, user.getDomicilio());
             st.setString(6, user.getTel());
             st.setInt(7, user.getSanctions());
