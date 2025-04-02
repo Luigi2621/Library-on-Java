@@ -11,8 +11,8 @@ package com.mycompany.models;
 public class Users {
     private int id;
     private String name;
-    private String last_name_1;
-    private String last_name_2;
+    private String last_name_p;
+    private String last_name_m;
     private String domicilio;
     private String tel;
     private int sanctions;
@@ -26,12 +26,12 @@ public class Users {
         this.name = name;
     }
 
-    public void setLast_name_1(String last_name_1) {
-        this.last_name_1 = last_name_1;
+    public void setLast_name_p(String last_name_p) {
+        this.last_name_p = last_name_p;
     }
 
-    public void setLast_name_2(String last_name_2) {
-        this.last_name_2 = last_name_2;
+    public void setLast_name_m(String last_name_m) {
+        this.last_name_m = last_name_m;
     }
 
     public void setDomicilio(String domicilio) {
@@ -58,12 +58,12 @@ public class Users {
         return name;
     }
 
-    public String getLast_name_1() {
-        return last_name_1;
+    public String getLast_name_p() {
+        return last_name_p;
     }
 
-    public String getLast_name_2() {
-        return last_name_2;
+    public String getLast_name_m() {
+        return last_name_m;
     }
 
     public String getDomicilio() {

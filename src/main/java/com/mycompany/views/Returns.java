@@ -4,6 +4,8 @@
  */
 package com.mycompany.views;
 
+import java.awt.Color;
+
 /**
  *
  * @author luisc
@@ -15,7 +17,17 @@ public class Returns extends javax.swing.JPanel {
      */
     public Returns() {
         initComponents();
+        InitStyles();
     }
+    
+       private void InitStyles() {
+        title.putClientProperty("FlatLaf.styleClass", "h1");
+        title.setForeground(Color.black);
+        folioTxt.putClientProperty("JTextField.placeholderText", "Ingrese el número de folio del usuario");
+        libroIdTxt.putClientProperty("JTextField.placeholderText", "Ingrese el ID del libro a devolver");
+    }    
+ 
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,7 +44,7 @@ public class Returns extends javax.swing.JPanel {
         title = new javax.swing.JLabel();
         Text1 = new javax.swing.JLabel();
         Text2 = new javax.swing.JLabel();
-        folioLbl = new javax.swing.JTextField();
+        folioTxt = new javax.swing.JTextField();
         libroIdTxt = new javax.swing.JTextField();
         button = new javax.swing.JButton();
 
@@ -49,10 +61,10 @@ public class Returns extends javax.swing.JPanel {
 
         Text2.setText("Libro ID");
 
-        folioLbl.setForeground(new java.awt.Color(102, 102, 102));
-        folioLbl.addActionListener(new java.awt.event.ActionListener() {
+        folioTxt.setForeground(new java.awt.Color(102, 102, 102));
+        folioTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                folioLblActionPerformed(evt);
+                folioTxtActionPerformed(evt);
             }
         });
 
@@ -87,7 +99,7 @@ public class Returns extends javax.swing.JPanel {
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(Text2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(253, 253, 253))
-                            .addComponent(folioLbl)
+                            .addComponent(folioTxt)
                             .addComponent(libroIdTxt)))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
@@ -109,7 +121,7 @@ public class Returns extends javax.swing.JPanel {
                         .addGap(40, 40, 40)
                         .addComponent(Text1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(folioLbl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(folioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58)
                         .addComponent(Text2)
                         .addGap(18, 18, 18)
@@ -138,9 +150,9 @@ public class Returns extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void folioLblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folioLblActionPerformed
+    private void folioTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folioTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_folioLblActionPerformed
+    }//GEN-LAST:event_folioTxtActionPerformed
 
     private void libroIdTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_libroIdTxtActionPerformed
         // TODO add your handling code here:
@@ -152,7 +164,7 @@ public class Returns extends javax.swing.JPanel {
     private javax.swing.JLabel Text2;
     private javax.swing.JPanel bg;
     private javax.swing.JButton button;
-    private javax.swing.JTextField folioLbl;
+    private javax.swing.JTextField folioTxt;
     private javax.swing.JLabel image;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField libroIdTxt;

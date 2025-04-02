@@ -4,6 +4,8 @@
  */
 package com.mycompany.views;
 
+import java.awt.Color;
+
 /**
  *
  * @author luisc
@@ -15,7 +17,26 @@ public class upBooks extends javax.swing.JPanel {
      */
     public upBooks() {
         initComponents();
+        InitStyles();
     }
+    
+    private void InitStyles() {
+        title.putClientProperty("FlatLaf.styleClass", "h1");
+        title.setForeground(Color.black);
+        idTxt.putClientProperty("JTextField.placeholderText", "Ingrese el número identificador del libro");
+        tituloLibTxt.putClientProperty("JTextField.placeholderText", "Ingrese el Título del libro");
+        dateTxt.putClientProperty("JTextField.placeholderText", "Ingrese la fecha de publicación del libro");
+        authorTxt.putClientProperty("JTextField.placeholderText", "Ingrese el nombre del autor del libro");
+        catTxt.putClientProperty("JTextField.placeholderText", "Ingrese la categoría del libro");
+        edTxt.putClientProperty("JTextField.placeholderText", "Ingrese la edición del libro");
+        langTxt.putClientProperty("JTextField.placeholderText", "Ingrese el idioma del libro");
+        pagsTxt.putClientProperty("JTextField.placeholderText", "Ingrese la cantidad de páginas del libro");
+        descTxt.putClientProperty("JTextField.placeholderText", "Ingrese la descripción del libro");
+        stockTxt.putClientProperty("JTextField.placeholderText", "Ingrese el total de unidades en stock del libro");
+        disponiblesTxt.putClientProperty("JTextField.placeholderText", "Ingrese el total de unidades disponibles del libro");
+        ejemplaresTxt.putClientProperty("JTextField.placeholderText", "Ingrese el total de ejemplares disponibles del libro");
+
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,8 +50,8 @@ public class upBooks extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         idLbl = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        descTxt = new javax.swing.JTextField();
+        tituloLibTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         dateLbl = new javax.swing.JLabel();
         edTxt = new javax.swing.JTextField();
@@ -43,13 +64,13 @@ public class upBooks extends javax.swing.JPanel {
         idTxt = new javax.swing.JTextField();
         langTxt = new javax.swing.JTextField();
         pagsTxt = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
+        disponiblesTxt = new javax.swing.JTextField();
+        ejemplaresTxt = new javax.swing.JTextField();
         langLbl = new javax.swing.JLabel();
         pagsLbl = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        stockTxt = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -102,7 +123,7 @@ public class upBooks extends javax.swing.JPanel {
             .addGroup(bgLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField2)
+                    .addComponent(tituloLibTxt)
                     .addComponent(dateTxt)
                     .addComponent(authorTxt)
                     .addComponent(idTxt, javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,16 +148,16 @@ public class upBooks extends javax.swing.JPanel {
                         .addGap(245, 245, 245)))
                 .addGap(38, 38, 38)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1)
+                    .addComponent(descTxt)
                     .addComponent(langTxt)
                     .addComponent(pagsTxt)
-                    .addComponent(jTextField12)
+                    .addComponent(ejemplaresTxt)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(187, 187, 187))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField13)
+                            .addComponent(stockTxt)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(127, 127, 127)))
@@ -145,7 +166,7 @@ public class upBooks extends javax.swing.JPanel {
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(1, 1, 1))
-                            .addComponent(jTextField11)))
+                            .addComponent(disponiblesTxt)))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(187, 187, 187))
@@ -180,7 +201,7 @@ public class upBooks extends javax.swing.JPanel {
                     .addComponent(pagsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tituloLibTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pagsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -189,7 +210,7 @@ public class upBooks extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(descTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(authorLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -198,8 +219,8 @@ public class upBooks extends javax.swing.JPanel {
                 .addGap(3, 3, 3)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(authorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(disponiblesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stockTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(catLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -207,7 +228,7 @@ public class upBooks extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(catTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ejemplaresTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
@@ -245,8 +266,11 @@ public class upBooks extends javax.swing.JPanel {
     private javax.swing.JTextField catTxt;
     private javax.swing.JLabel dateLbl;
     private javax.swing.JTextField dateTxt;
+    private javax.swing.JTextField descTxt;
+    private javax.swing.JTextField disponiblesTxt;
     private javax.swing.JLabel edLbl;
     private javax.swing.JTextField edTxt;
+    private javax.swing.JTextField ejemplaresTxt;
     private javax.swing.JLabel idLbl;
     private javax.swing.JTextField idTxt;
     private javax.swing.JButton jButton1;
@@ -255,15 +279,12 @@ public class upBooks extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel langLbl;
     private javax.swing.JTextField langTxt;
     private javax.swing.JLabel pagsLbl;
     private javax.swing.JTextField pagsTxt;
+    private javax.swing.JTextField stockTxt;
     private javax.swing.JLabel title;
+    private javax.swing.JTextField tituloLibTxt;
     // End of variables declaration//GEN-END:variables
 }

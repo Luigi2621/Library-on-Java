@@ -6,6 +6,7 @@ package com.mycompany.views;
 
 import com.mycompany.interfaces.DAOUsers;
 import com.mycompany.library.DAOUsersImpl;
+import java.awt.Color;
 
 /**
  *
@@ -18,7 +19,18 @@ public class upUsers extends javax.swing.JPanel {
      */
     public upUsers() {
         initComponents();
+        InitStyles();
     }
+    
+    private void InitStyles() {
+        title.putClientProperty("FlatLaf.styleClass", "h1");
+        title.setForeground(Color.black);
+        nameTxt.putClientProperty("JTextField.placeholderText", "Ingrese el nombre o nombres");
+        apPTxt.putClientProperty("JTextField.placeholderText", "Ingrese el primer apellido");
+        apMTxt.putClientProperty("JTextField.placeholderText", "Ingrese el segundo apellido");
+        domTxt.putClientProperty("JTextField.placeholderText", "Ingrese la dirección del usuario");
+        phoneTxt.putClientProperty("JTextField.placeholderText", "Ingrese el número telefónico del usuario");
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -168,8 +180,8 @@ public class upUsers extends javax.swing.JPanel {
         
         com.mycompany.models.Users user = new com.mycompany.models.Users();
         user.setName(nombre);
-        user.setLast_name_1(apP);
-        user.setLast_name_2(apM);
+        user.setLast_name_p(apP);
+        user.setLast_name_m(apM);
         user.setDomicilio(dom);
         user.setTel(tel);
         

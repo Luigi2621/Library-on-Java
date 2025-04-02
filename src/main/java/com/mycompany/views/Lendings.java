@@ -24,10 +24,12 @@ private void InitStyles(){
         folioLbl.setForeground(Color.black);
         libroIdLbl.putClientProperty( "FlatLaf.styleClass", "large" );
         libroIdLbl.setForeground(Color.black);
-       
-        
+        folioTxt.putClientProperty("JTextField.placeholderText", "Ingrese el numero de folio del Usuario");
+        libroIdTxt.putClientProperty("JTextField.placeholderText", "Ingrese el ID del libro a prestar");
+            
         
     }
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

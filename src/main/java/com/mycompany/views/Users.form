@@ -42,7 +42,7 @@
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Component id="jTextField1" min="-2" pref="610" max="-2" attributes="0"/>
+                                  <Component id="userSearch" min="-2" pref="610" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jButton2" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
@@ -69,7 +69,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jButton2" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="jTextField1" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="userSearch" min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="19" max="32767" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="277" max="-2" attributes="0"/>
@@ -93,7 +93,7 @@
             <Property name="text" type="java.lang.String" value="Usuarios"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="userSearch">
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
@@ -128,9 +128,9 @@
                   <Table columnCount="6" rowCount="0">
                     <Column editable="true" title="ID" type="java.lang.Object"/>
                     <Column editable="true" title="Nombre" type="java.lang.Object"/>
-                    <Column editable="true" title="1er Apellido" type="java.lang.Object"/>
-                    <Column editable="true" title="2do Apellido" type="java.lang.Object"/>
-                    <Column editable="true" title="Domicilo" type="java.lang.Object"/>
+                    <Column editable="true" title="Apellido P." type="java.lang.Object"/>
+                    <Column editable="true" title="Apellido M." type="java.lang.Object"/>
+                    <Column editable="true" title="Domicilio" type="java.lang.Object"/>
                     <Column editable="true" title="Tel&#xe9;fono" type="java.lang.Object"/>
                   </Table>
                 </Property>

@@ -4,7 +4,11 @@
  */
 package com.mycompany.views;
 
+import com.mycompany.interfaces.DAOUsers;
+import com.mycompany.library.DAOUsersImpl;
 import com.mycompany.library.Dashboard;
+import java.awt.Color;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,6 +21,23 @@ public class Users extends javax.swing.JPanel {
      */
     public Users() {
         initComponents();
+        InitStyles();
+        LoadUsers();
+                
+    }
+    private void InitStyles() {
+        title.putClientProperty("FlatLaf.styleClass", "h1");
+        title.setForeground(Color.black);
+        userSearch.putClientProperty("JTextField.placeholderText", "Ingrese el ID usuario a buscar");
+    }    
+    private void LoadUsers(){
+        try {
+            DAOUsers dao = new DAOUsersImpl();    
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            dao.listar().forEach((u) -> model.addRow(new Object[]{u.getId(), u.getName(), u.getLast_name_p(), u.getLast_name_m(), u.getDomicilio(), u.getTel()}));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());;
+        }
     }
 
     /**
@@ -30,7 +51,7 @@ public class Users extends javax.swing.JPanel {
 
         bg = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        userSearch = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -57,7 +78,7 @@ public class Users extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Nombre", "1er Apellido", "2do Apellido", "Domicilo", "Teléfono"
+                "ID", "Nombre", "Apellido P.", "Apellido M.", "Domicilio", "Teléfono"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -94,7 +115,7 @@ public class Users extends javax.swing.JPanel {
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(userSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(bgLayout.createSequentialGroup()
@@ -114,7 +135,7 @@ public class Users extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -151,7 +172,7 @@ public class Users extends javax.swing.JPanel {
     private javax.swing.JButton jButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel title;
+    private javax.swing.JTextField userSearch;
     // End of variables declaration//GEN-END:variables
 }

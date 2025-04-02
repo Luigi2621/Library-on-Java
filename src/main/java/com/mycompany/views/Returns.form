@@ -53,7 +53,7 @@
                                   <Component id="Text2" max="32767" attributes="0"/>
                                   <EmptySpace min="253" pref="253" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="folioLbl" alignment="0" max="32767" attributes="0"/>
+                              <Component id="folioTxt" alignment="0" max="32767" attributes="0"/>
                               <Component id="libroIdTxt" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -81,7 +81,7 @@
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           <Component id="Text1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="folioLbl" min="-2" max="-2" attributes="0"/>
+                          <Component id="folioTxt" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                           <Component id="Text2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -136,14 +136,14 @@
             <Property name="text" type="java.lang.String" value="Libro ID"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="folioLbl">
+        <Component class="javax.swing.JTextField" name="folioTxt">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="folioLblActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="folioTxtActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="libroIdTxt">
