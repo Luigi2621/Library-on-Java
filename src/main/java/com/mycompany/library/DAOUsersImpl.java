@@ -42,8 +42,25 @@ public class DAOUsersImpl extends Database implements DAOUsers {
     }
 
     @Override
-    public void eliminar(Users user) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void eliminar(int userId) throws Exception {
+        
+        try {
+            this.Conectar();
+            PreparedStatement st = this.conexion.prepareStatement("DELETE FROM users WHERE id = ?;");
+            //st.setInt(1, user.getId());
+            st.setInt(1, userId);
+            st.executeUpdate();
+
+            //st.setInt(6, user.getSanctions());
+            //st.setInt(7, user.getSanc_money());
+            st.executeUpdate();
+            st.close();         
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.Cerrar();
+        }
+
     }
 
     @Override

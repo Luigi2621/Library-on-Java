@@ -36,7 +36,7 @@ public class Users extends javax.swing.JPanel {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             dao.listar().forEach((u) -> model.addRow(new Object[]{u.getId(), u.getName(), u.getLast_name_p(), u.getLast_name_m(), u.getDomicilio(), u.getTel()}));
         } catch (Exception e) {
-            System.out.println(e.getMessage());;
+            System.out.println(e.getMessage());
         }
     }
 
@@ -56,7 +56,7 @@ public class Users extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
         title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -89,11 +89,16 @@ public class Users extends javax.swing.JPanel {
         jButton2.setText("Buscar");
         jButton2.setBorder(null);
 
-        jButton3.setBackground(new java.awt.Color(0, 102, 255));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Borrar");
-        jButton3.setBorder(null);
+        delete.setBackground(new java.awt.Color(0, 102, 255));
+        delete.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        delete.setForeground(new java.awt.Color(255, 255, 255));
+        delete.setText("Borrar");
+        delete.setBorder(null);
+        delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(0, 102, 255));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -123,7 +128,7 @@ public class Users extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(55, 55, 55)))
                         .addContainerGap(16, Short.MAX_VALUE))))
         );
@@ -141,7 +146,7 @@ public class Users extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15))
         );
@@ -163,12 +168,32 @@ public class Users extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        // TODO add your handling code here:
+          //Se agrega el arrego de todos los indices de las filas que están seleccionadas
+        
+          DAOUsers dao = new DAOUsersImpl();
+          DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+          for (int i : jTable1.getSelectedRows()){
+            
+            try {                                         
+                dao.eliminar((int) jTable1.getValueAt(i, 0));
+                model.removeRow(i);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        }
+        
+         
+        
+    }//GEN-LAST:event_deleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
+    private javax.swing.JButton delete;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
