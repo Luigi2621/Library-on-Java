@@ -14,15 +14,15 @@ public class DAOUsersImpl extends Database implements DAOUsers {
     public void registrar(Users user) throws Exception {
         try {
             this.Conectar();
-            PreparedStatement st = this.conexion.prepareStatement("INSERT INTO users (id, name, last_name_p, last_name_m, domicilio, tel, sanctions, sanc money) VALUES(?,?,?,?,?,?,?,?);");
-            st.setInt(1, user.getId());
-            st.setString(2, user.getName());
-            st.setString(3, user.getLast_name_1());
-            st.setString(4, user.getLast_name_2());
-            st.setString(5, user.getDomicilio());
-            st.setString(6, user.getTel());
-            st.setInt(7, user.getSanctions());
-            st.setInt(8, user.getSanc_money());
+            PreparedStatement st = this.conexion.prepareStatement("INSERT INTO users (name, last_name_p, last_name_m, domicilio, tel) VALUES(?,?,?,?,?);");
+            //st.setInt(1, user.getId());
+            st.setString(1, user.getName());
+            st.setString(2, user.getLast_name_1());
+            st.setString(3, user.getLast_name_2());
+            st.setString(4, user.getDomicilio());
+            st.setString(5, user.getTel());
+            //st.setInt(6, user.getSanctions());
+            //st.setInt(7, user.getSanc_money());
             st.executeUpdate();
             
         } catch (Exception e) {

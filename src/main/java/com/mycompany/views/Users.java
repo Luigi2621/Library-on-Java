@@ -4,6 +4,8 @@
  */
 package com.mycompany.views;
 
+import com.mycompany.library.Dashboard;
+
 /**
  *
  * @author luisc
@@ -136,7 +138,7 @@ public class Users extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Dashboard.ShowJPanel(new upUsers());
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

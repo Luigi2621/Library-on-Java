@@ -39,9 +39,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="27" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jTextField2" alignment="1" max="32767" attributes="0"/>
-                      <Component id="dateTxt" alignment="1" max="32767" attributes="0"/>
-                      <Component id="idTxt" alignment="0" max="32767" attributes="0"/>
+                      <Component id="apPTxt" alignment="1" max="32767" attributes="0"/>
+                      <Component id="apMTxt" alignment="1" max="32767" attributes="0"/>
+                      <Component id="nameTxt" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="dateLbl" max="32767" attributes="0"/>
                           <EmptySpace min="187" pref="187" max="-2" attributes="0"/>
@@ -58,8 +58,8 @@
                   <Component id="jSeparator1" min="-2" pref="15" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="langTxt" max="32767" attributes="0"/>
-                      <Component id="pagsTxt" max="32767" attributes="0"/>
+                      <Component id="domTxt" max="32767" attributes="0"/>
+                      <Component id="phoneTxt" max="32767" attributes="0"/>
                       <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -92,8 +92,8 @@
                           </Group>
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="idTxt" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="langTxt" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="nameTxt" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="domTxt" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -102,14 +102,14 @@
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField2" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="pagsTxt" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="apPTxt" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="phoneTxt" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                           <Component id="dateLbl" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="dateTxt" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="apMTxt" min="-2" pref="33" max="-2" attributes="0"/>
                               <Component id="jButton1" min="-2" pref="78" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
@@ -137,7 +137,7 @@
             <Property name="text" type="java.lang.String" value="Nombre"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="apPTxt">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
@@ -149,13 +149,13 @@
             <Property name="text" type="java.lang.String" value="2do Apellido"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="dateTxt">
+        <Component class="javax.swing.JTextField" name="apMTxt">
         </Component>
-        <Component class="javax.swing.JTextField" name="idTxt">
+        <Component class="javax.swing.JTextField" name="nameTxt">
         </Component>
-        <Component class="javax.swing.JTextField" name="langTxt">
+        <Component class="javax.swing.JTextField" name="domTxt">
         </Component>
-        <Component class="javax.swing.JTextField" name="pagsTxt">
+        <Component class="javax.swing.JTextField" name="phoneTxt">
         </Component>
         <Component class="javax.swing.JLabel" name="langLbl">
           <Properties>

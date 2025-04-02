@@ -4,6 +4,9 @@
  */
 package com.mycompany.views;
 
+import com.mycompany.interfaces.DAOUsers;
+import com.mycompany.library.DAOUsersImpl;
+
 /**
  *
  * @author luisc
@@ -29,13 +32,13 @@ public class upUsers extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         idLbl = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        apPTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         dateLbl = new javax.swing.JLabel();
-        dateTxt = new javax.swing.JTextField();
-        idTxt = new javax.swing.JTextField();
-        langTxt = new javax.swing.JTextField();
-        pagsTxt = new javax.swing.JTextField();
+        apMTxt = new javax.swing.JTextField();
+        nameTxt = new javax.swing.JTextField();
+        domTxt = new javax.swing.JTextField();
+        phoneTxt = new javax.swing.JTextField();
         langLbl = new javax.swing.JLabel();
         pagsLbl = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -76,9 +79,9 @@ public class upUsers extends javax.swing.JPanel {
             .addGroup(bgLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField2)
-                    .addComponent(dateTxt)
-                    .addComponent(idTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(apPTxt)
+                    .addComponent(apMTxt)
+                    .addComponent(nameTxt, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bgLayout.createSequentialGroup()
                         .addComponent(dateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(187, 187, 187))
@@ -91,8 +94,8 @@ public class upUsers extends javax.swing.JPanel {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(langTxt)
-                    .addComponent(pagsTxt)
+                    .addComponent(domTxt)
+                    .addComponent(phoneTxt)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,21 +121,21 @@ public class upUsers extends javax.swing.JPanel {
                             .addComponent(langLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(11, 11, 11)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(idTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(langTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(domTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(1, 1, 1)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(pagsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pagsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(apPTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(dateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(apMTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(165, 165, 165))
                     .addGroup(bgLayout.createSequentialGroup()
@@ -153,24 +156,54 @@ public class upUsers extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String nombre = nameTxt.getText();
+        String apP = apPTxt.getText();
+        String apM = apMTxt.getText();
+        String dom = domTxt.getText();
+        String tel = phoneTxt.getText();
+        //Validaciones para los campos (comentario)
+        if (nombre.isEmpty() || apP.isEmpty() || apM.isEmpty() || dom.isEmpty() || tel.isEmpty()){
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe llenar todos los campos \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+        
+        com.mycompany.models.Users user = new com.mycompany.models.Users();
+        user.setName(nombre);
+        user.setLast_name_1(apP);
+        user.setLast_name_2(apM);
+        user.setDomicilio(dom);
+        user.setTel(tel);
+        
+        try {
+            DAOUsers dao = new DAOUsersImpl();
+            dao.registrar(user);
+            javax.swing.JOptionPane.showMessageDialog(this, "Usuario registrado exitosamente. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            nameTxt.setText("");
+            apPTxt.setText("");
+            apMTxt.setText("");
+            domTxt.setText("");
+            phoneTxt.setText("");
+            
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un error al registrar el usuario. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+            System.out.println(e.getMessage());
+        } 
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField apMTxt;
+    private javax.swing.JTextField apPTxt;
     private javax.swing.JPanel bg;
     private javax.swing.JLabel dateLbl;
-    private javax.swing.JTextField dateTxt;
+    private javax.swing.JTextField domTxt;
     private javax.swing.JLabel idLbl;
-    private javax.swing.JTextField idTxt;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel langLbl;
-    private javax.swing.JTextField langTxt;
+    private javax.swing.JTextField nameTxt;
     private javax.swing.JLabel pagsLbl;
-    private javax.swing.JTextField pagsTxt;
+    private javax.swing.JTextField phoneTxt;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
