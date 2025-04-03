@@ -175,9 +175,6 @@ public class Users extends javax.swing.JPanel {
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        // TODO add your handling code here:
-          //Se agrega el arrego de todos los indices de las filas que están seleccionadas
-        
           DAOUsers dao = new DAOUsersImpl();
           DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
           if (jTable1.getSelectedRows().length < 1) {
