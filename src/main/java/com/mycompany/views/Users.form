@@ -47,11 +47,11 @@
                                   <Component id="jButton2" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jButton1" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="addButton" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton4" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="editButton" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="delete" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="deleteButton" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -75,9 +75,9 @@
                   <Component id="jScrollPane1" min="-2" pref="277" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton1" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="delete" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="jButton4" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="addButton" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="deleteButton" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="editButton" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               </Group>
@@ -95,7 +95,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="userSearch">
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="addButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -112,7 +112,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addButtonActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -192,7 +192,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="delete">
+        <Component class="javax.swing.JButton" name="deleteButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -209,10 +209,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="editButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -228,6 +228,9 @@
               <Border info="null"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

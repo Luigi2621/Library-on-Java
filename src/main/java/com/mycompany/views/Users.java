@@ -8,6 +8,7 @@ import com.mycompany.interfaces.DAOUsers;
 import com.mycompany.library.DAOUsersImpl;
 import com.mycompany.library.Dashboard;
 import java.awt.Color;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -32,7 +33,7 @@ public class Users extends javax.swing.JPanel {
     }    
     private void LoadUsers(){
         try {
-            DAOUsers dao = new DAOUsersImpl();    
+            DAOUsers dao = new DAOUsersImpl();
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             dao.listar().forEach((u) -> model.addRow(new Object[]{u.getId(), u.getName(), u.getLast_name_p(), u.getLast_name_m(), u.getDomicilio(), u.getTel()}));
         } catch (Exception e) {
@@ -52,24 +53,24 @@ public class Users extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         userSearch = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        addButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
-        delete = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
+        editButton = new javax.swing.JButton();
 
         title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         title.setText("Usuarios");
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Nuevo");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        addButton.setBackground(new java.awt.Color(0, 102, 255));
+        addButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        addButton.setForeground(new java.awt.Color(255, 255, 255));
+        addButton.setText("Nuevo");
+        addButton.setBorder(null);
+        addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                addButtonActionPerformed(evt);
             }
         });
 
@@ -89,22 +90,27 @@ public class Users extends javax.swing.JPanel {
         jButton2.setText("Buscar");
         jButton2.setBorder(null);
 
-        delete.setBackground(new java.awt.Color(0, 102, 255));
-        delete.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        delete.setForeground(new java.awt.Color(255, 255, 255));
-        delete.setText("Borrar");
-        delete.setBorder(null);
-        delete.addActionListener(new java.awt.event.ActionListener() {
+        deleteButton.setBackground(new java.awt.Color(0, 102, 255));
+        deleteButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        deleteButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteButton.setText("Borrar");
+        deleteButton.setBorder(null);
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteActionPerformed(evt);
+                deleteButtonActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(0, 102, 255));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Editar");
-        jButton4.setBorder(null);
+        editButton.setBackground(new java.awt.Color(0, 102, 255));
+        editButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        editButton.setForeground(new java.awt.Color(255, 255, 255));
+        editButton.setText("Editar");
+        editButton.setBorder(null);
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -124,11 +130,11 @@ public class Users extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(55, 55, 55)))
                         .addContainerGap(16, Short.MAX_VALUE))))
         );
@@ -145,9 +151,9 @@ public class Users extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15))
         );
 
@@ -163,38 +169,59 @@ public class Users extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         Dashboard.ShowJPanel(new upUsers());
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_addButtonActionPerformed
 
-    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
           //Se agrega el arrego de todos los indices de las filas que están seleccionadas
         
           DAOUsers dao = new DAOUsersImpl();
           DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-          for (int i : jTable1.getSelectedRows()){
-            
-            try {                                         
+          if (jTable1.getSelectedRows().length < 1) {
+          javax.swing.JOptionPane.showMessageDialog(this, "Debes seleccionar uno o más usuarios a eliminar. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+          }
+          else {   for (int i : jTable1.getSelectedRows()){            
+            try {
                 dao.eliminar((int) jTable1.getValueAt(i, 0));
                 model.removeRow(i);
+            } catch (Exception e) {
+            System.out.println(e.getMessage());
+            }
+          }
+        
+        }       
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+        if (jTable1.getSelectedRow() > -1) {
+        try {
+            int userId = (int) jTable1.getValueAt(jTable1.getSelectedRow(),0);
+            DAOUsers dao = new DAOUsersImpl();
+            Dashboard.ShowJPanel(new upUsers(dao.getUserById(userId)));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+            
+        }
+        else{
+            javax.swing.JOptionPane.showMessageDialog(this, "No se seleccionó ningún usuario para editar \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
         
-         
         
-    }//GEN-LAST:event_deleteActionPerformed
+              
+        
+    }//GEN-LAST:event_editButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addButton;
     private javax.swing.JPanel bg;
-    private javax.swing.JButton delete;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton editButton;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel title;

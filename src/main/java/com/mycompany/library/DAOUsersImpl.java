@@ -26,9 +26,7 @@ public class DAOUsersImpl extends Database implements DAOUsers {
             //st.setInt(6, user.getSanctions());
             //st.setInt(7, user.getSanc_money());
             st.executeUpdate();
-            st.close();
-            
-            
+            st.close();        
         } catch (Exception e) {
             throw e;
         } finally {
@@ -41,18 +39,13 @@ public class DAOUsersImpl extends Database implements DAOUsers {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
-    public void eliminar(int userId) throws Exception {
+    @Override //PENDIENTE AQUI
+    public void eliminar(int userId) throws Exception { //PENDIENTE AQUI
         
         try {
             this.Conectar();
             PreparedStatement st = this.conexion.prepareStatement("DELETE FROM users WHERE id = ?;");
-            //st.setInt(1, user.getId());
             st.setInt(1, userId);
-            st.executeUpdate();
-
-            //st.setInt(6, user.getSanctions());
-            //st.setInt(7, user.getSanc_money());
             st.executeUpdate();
             st.close();         
         } catch (Exception e) {
@@ -60,7 +53,6 @@ public class DAOUsersImpl extends Database implements DAOUsers {
         } finally {
             this.Cerrar();
         }
-
     }
 
     @Override
@@ -93,6 +85,37 @@ public class DAOUsersImpl extends Database implements DAOUsers {
             this.Cerrar();
         }
         return lista;
+    }
+
+    @Override
+    public Users getUserById(int userId) throws Exception {
+        Users user = new Users();
+        
+        try{
+            this.Conectar();
+            PreparedStatement st = this.conexion.prepareStatement("SELECT * FROM users WHERE id = ? LIMIT 1;");
+            st.setInt(1, userId);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()) {
+               user.setId(rs.getInt("id"));
+               user.setName(rs.getString("name"));
+               user.setLast_name_p(rs.getString("Last_name_p"));
+               user.setLast_name_m(rs.getString("Last_name_m"));
+               user.setDomicilio(rs.getString("domicilio"));
+               user.setTel(rs.getString("tel"));
+               user.setSanctions(rs.getInt("sanctions"));
+               user.setSanc_money(rs.getInt("sanc_money"));
+               
+            }
+            rs.close(); //Se cierra el result set
+            st.close(); // Se cierra el prepared statement
+            
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.Cerrar();
+        }
+        return user;
     }
     
 }

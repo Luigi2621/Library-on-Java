@@ -19,10 +19,15 @@ public class upUsers extends javax.swing.JPanel {
      */
     public upUsers() {
         initComponents();
-        InitStyles();
+        InitStyles(false, null);
     }
     
-    private void InitStyles() {
+    public upUsers(com.mycompany.models.Users user){
+        initComponents();
+        InitStyles(true, user);  
+    }
+    
+    private void InitStyles(boolean isEdition, com.mycompany.models.Users user) {
         title.putClientProperty("FlatLaf.styleClass", "h1");
         title.setForeground(Color.black);
         nameTxt.putClientProperty("JTextField.placeholderText", "Ingrese el nombre o nombres");
@@ -30,7 +35,24 @@ public class upUsers extends javax.swing.JPanel {
         apMTxt.putClientProperty("JTextField.placeholderText", "Ingrese el segundo apellido");
         domTxt.putClientProperty("JTextField.placeholderText", "Ingrese la dirección del usuario");
         phoneTxt.putClientProperty("JTextField.placeholderText", "Ingrese el número telefónico del usuario");
-    } 
+        
+        if (isEdition) {
+            title.setText("Editar Usuario");
+            button.setText("Guardar");
+            
+            if (user != null){
+                nameTxt.setText(user.getName());
+                apPTxt.setText(user.getLast_name_p());
+                apMTxt.setText(user.getLast_name_m());
+                domTxt.setText(user.getDomicilio());
+                phoneTxt.setText(user.getTel());
+            }
+        }
+        //else{
+        //    Registrar nuevo Usuario
+        //            title.setText(user.getName());
+    }
+     
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,7 +75,7 @@ public class upUsers extends javax.swing.JPanel {
         phoneTxt = new javax.swing.JTextField();
         langLbl = new javax.swing.JLabel();
         pagsLbl = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        button = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
         setPreferredSize(new java.awt.Dimension(750, 430));
@@ -71,14 +93,14 @@ public class upUsers extends javax.swing.JPanel {
 
         pagsLbl.setText("Teléfono");
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Registrar Usuario");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        button.setBackground(new java.awt.Color(0, 102, 255));
+        button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        button.setForeground(new java.awt.Color(255, 255, 255));
+        button.setText("Registrar Usuario");
+        button.setBorder(null);
+        button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonActionPerformed(evt);
             }
         });
 
@@ -108,7 +130,7 @@ public class upUsers extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(domTxt)
                     .addComponent(phoneTxt)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(langLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -148,7 +170,7 @@ public class upUsers extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(apMTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(button, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(165, 165, 165))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -167,7 +189,7 @@ public class upUsers extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActionPerformed
         String nombre = nameTxt.getText();
         String apP = apPTxt.getText();
         String apM = apMTxt.getText();
@@ -189,6 +211,7 @@ public class upUsers extends javax.swing.JPanel {
             DAOUsers dao = new DAOUsersImpl();
             dao.registrar(user);
             javax.swing.JOptionPane.showMessageDialog(this, "Usuario registrado exitosamente. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            //Se limpian todos los campos: 
             nameTxt.setText("");
             apPTxt.setText("");
             apMTxt.setText("");
@@ -199,17 +222,17 @@ public class upUsers extends javax.swing.JPanel {
             javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un error al registrar el usuario. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
             System.out.println(e.getMessage());
         } 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_buttonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField apMTxt;
     private javax.swing.JTextField apPTxt;
     private javax.swing.JPanel bg;
+    private javax.swing.JButton button;
     private javax.swing.JLabel dateLbl;
     private javax.swing.JTextField domTxt;
     private javax.swing.JLabel idLbl;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel langLbl;
