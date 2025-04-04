@@ -7,7 +7,6 @@ public interface DAOUsers {
     public void registrar(Users user) throws Exception;
     public void modificar(Users user) throws Exception;
     public void eliminar(int userId) throws Exception;
-    public List<Users> listar() throws Exception;
-    public Users getUserById(int userId) throws Exception; //Metodo que nos va a retornar un objeto de tipo Users
-    
+    public List<Users> listar(String name) throws Exception;
+    public Users getUserById(int userId) throws Exception; 
 }

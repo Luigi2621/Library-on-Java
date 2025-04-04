@@ -220,12 +220,14 @@ public class upUsers extends javax.swing.JPanel {
                 dao.modificar(user);
             String successMsg = isEdition ? "modificado" : "registrado";
             javax.swing.JOptionPane.showMessageDialog(this, "Usuario" + successMsg + " registrado exitosamente. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            //Se limpian todos los campos: 
+            //Se limpian todos los campos:
+            if (!isEdition){
             nameTxt.setText("");
             apPTxt.setText("");
             apMTxt.setText("");
             domTxt.setText("");
             phoneTxt.setText("");
+            }
             
         } catch (Exception e) {
             String errorMsg = isEdition ? "modificar" : "registrar";

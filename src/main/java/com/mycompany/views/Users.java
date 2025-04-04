@@ -35,7 +35,7 @@ public class Users extends javax.swing.JPanel {
         try {
             DAOUsers dao = new DAOUsersImpl();
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-            dao.listar().forEach((u) -> model.addRow(new Object[]{u.getId(), u.getName(), u.getLast_name_p(), u.getLast_name_m(), u.getDomicilio(), u.getTel()}));
+            dao.listar("").forEach((u) -> model.addRow(new Object[]{u.getId(), u.getName(), u.getLast_name_p(), u.getLast_name_m(), u.getDomicilio(), u.getTel()}));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -56,7 +56,7 @@ public class Users extends javax.swing.JPanel {
         addButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        searchButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
         editButton = new javax.swing.JButton();
 
@@ -84,11 +84,16 @@ public class Users extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jButton2.setBackground(new java.awt.Color(0, 102, 255));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Buscar");
-        jButton2.setBorder(null);
+        searchButton.setBackground(new java.awt.Color(0, 102, 255));
+        searchButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        searchButton.setForeground(new java.awt.Color(255, 255, 255));
+        searchButton.setText("Buscar");
+        searchButton.setBorder(null);
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
 
         deleteButton.setBackground(new java.awt.Color(0, 102, 255));
         deleteButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -128,7 +133,7 @@ public class Users extends javax.swing.JPanel {
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(userSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -145,7 +150,7 @@ public class Users extends javax.swing.JPanel {
                 .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(userSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,15 +217,33 @@ public class Users extends javax.swing.JPanel {
         
     }//GEN-LAST:event_editButtonActionPerformed
 
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        // TODO add your handling code here:
+        
+        try {
+            String usuarioBuscar = userSearch.getText();
+            if (usuarioBuscar.isEmpty()){
+              javax.swing.JOptionPane.showMessageDialog(this, "Debes ingresar el nombre de usuario a buscar\n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);  
+              userSearch.requestFocus();
+              return;
+            }
+            DAOUsers dao = new DAOUsersImpl();
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            dao.listar(usuarioBuscar).forEach((u) -> model.addRow(new Object[]{u.getId(), u.getName(), u.getLast_name_p(), u.getLast_name_m(), u.getDomicilio(), u.getTel()}));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_searchButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JPanel bg;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton editButton;
-    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton searchButton;
     private javax.swing.JLabel title;
     private javax.swing.JTextField userSearch;
     // End of variables declaration//GEN-END:variables

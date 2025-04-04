@@ -23,6 +23,7 @@ public class DAOUsersImpl extends Database implements DAOUsers {
             st.setString(3, user.getLast_name_m());
             st.setString(4, user.getDomicilio());
             st.setString(5, user.getTel());
+            st.setInt(6, user.getId());
             //st.setInt(6, user.getSanctions());
             //st.setInt(7, user.getSanc_money());
             st.executeUpdate();
@@ -38,7 +39,7 @@ public class DAOUsersImpl extends Database implements DAOUsers {
     public void modificar(Users user) throws Exception {
         try {
             this.Conectar();
-            PreparedStatement st = this.conexion.prepareStatement("UPDATE users SET name = ?, last_name_p = ?, last_name_m = ?, domicilio = ?, tel = ?; WHERE id = ?");
+            PreparedStatement st = this.conexion.prepareStatement("UPDATE users SET name = ?, last_name_p = ?, last_name_m = ?, domicilio = ?, tel = ? WHERE id = ?;");
             //st.setInt(1, user.getId());
             st.setString(1, user.getName());
             st.setString(2, user.getLast_name_p());
@@ -53,12 +54,12 @@ public class DAOUsersImpl extends Database implements DAOUsers {
         } catch (Exception e) {
             throw e;
         } finally {
-            this.Cerrar();    
+            this.Cerrar(); 
+        }    
     }
 
     @Override 
-    public void eliminar(int userId) throws Exception { 
-        
+    public void eliminar(int userId) throws Exception {
         try {
             this.Conectar();
             PreparedStatement st = this.conexion.prepareStatement("DELETE FROM users WHERE id = ?;");
@@ -73,11 +74,12 @@ public class DAOUsersImpl extends Database implements DAOUsers {
     }
 
     @Override
-    public List<Users> listar() throws Exception {
+    public List<Users> listar(String name) throws Exception {
         List<Users> lista = null;
         try {
             this.Conectar();
-            PreparedStatement st = this.conexion.prepareStatement("SELECT * FROM users;");
+            String Query = name.isEmpty() ? "SELECT * FROM users;" : "SELECT * FROM users WHERE name LIKE %'"+ name +"'%;" ;
+                PreparedStatement st = this.conexion.prepareStatement(Query);
             
             lista = new ArrayList();
             ResultSet rs = st.executeQuery();
