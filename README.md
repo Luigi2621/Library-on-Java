@@ -1,2 +1,2 @@
 # Library-on-Java
-A java library made using MySQL
+A Java library made using Java and MySQL
