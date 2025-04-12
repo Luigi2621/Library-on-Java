@@ -222,6 +222,7 @@ public class Users extends javax.swing.JPanel {
         
         try {
             String usuarioBuscar = userSearch.getText();
+            //Validaciones para todos los campos de la tabla búsqueda 
             if (usuarioBuscar.isEmpty()){
               javax.swing.JOptionPane.showMessageDialog(this, "Debes ingresar el nombre de usuario a buscar\n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);  
               userSearch.requestFocus();
@@ -229,6 +230,7 @@ public class Users extends javax.swing.JPanel {
             }
             DAOUsers dao = new DAOUsersImpl();
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setRowCount(0);
             dao.listar(usuarioBuscar).forEach((u) -> model.addRow(new Object[]{u.getId(), u.getName(), u.getLast_name_p(), u.getLast_name_m(), u.getDomicilio(), u.getTel()}));
         } catch (Exception e) {
             System.out.println(e.getMessage());
