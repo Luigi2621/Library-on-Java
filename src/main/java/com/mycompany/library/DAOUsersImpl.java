@@ -16,8 +16,8 @@ public class DAOUsersImpl extends Database implements DAOUsers {
     public void registrar(Users user) throws Exception {
         try {
             this.Conectar();
-            PreparedStatement st = this.conexion.prepareStatement("INSERT INTO users (name, last_name_p, last_name_m, domicilio, tel) VALUES(?,?,?,?,?);");
-            //st.setInt(1, user.getId());
+            PreparedStatement st = this.conexion.prepareStatement("INSERT INTO users (name, last_name_p, last_name_m, domicilio, tel, id) VALUES(?,?,?,?,?,?);");
+           
             st.setString(1, user.getName());
             st.setString(2, user.getLast_name_p());
             st.setString(3, user.getLast_name_m());
