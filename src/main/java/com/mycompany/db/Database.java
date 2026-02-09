@@ -15,7 +15,7 @@ public class Database {
     private final String DB_URL = "jdbc:mysql://localhost/ibooks?useSSL=false&serverTimezone=UTC";
     
     private final String USER = "root";
-    private final String PASS = "";
+    private final String PASS = "thisisrootserver2020";
     
     public void Conectar() throws ClassNotFoundException { 
         try {System.out.println("Conexión exitosa");
