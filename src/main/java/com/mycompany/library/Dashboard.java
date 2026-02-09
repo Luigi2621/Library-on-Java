@@ -111,7 +111,7 @@ public class Dashboard extends javax.swing.JFrame {
         appName.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         appName.setForeground(new java.awt.Color(255, 255, 255));
         appName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        appName.setText("ibooks");
+        appName.setText("LuisBooks");
 
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
 
